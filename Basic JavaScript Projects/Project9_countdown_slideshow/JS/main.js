@@ -1,12 +1,12 @@
-function countdown() {
-    var seconds = document.getElementById("seconds").value;
+function countdown() {          //Adds a function for my alarm function to count down 
+    var seconds = document.getElementById("seconds").value; //Set the value of time to seconds
 
-    function tick() {
+    function tick() {           //The tick happens every second
         seconds = seconds - 1;
         timer.innerHTML = seconds;
-        var time = setTimeout(tick, 1000);
+        var time = setTimeout(tick, 1000); //Sets a timeout method to not run for more than 1000 ticks
         if (seconds == -1) {
-            alert("Time is up!");
+            alert("Time is up!");       //Alert to pop up once time runs out
             clearTimeout(time);
             timer.innerHTML = "";
         }
@@ -26,5 +26,5 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}
   slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 5000); // Change image every 2 seconds
+  setTimeout(showSlides, 5000); // Change the image automatically every 5 seconds
 }
